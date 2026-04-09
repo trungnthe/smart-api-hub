@@ -6,7 +6,6 @@ const data = JSON.parse(fs.readFileSync('./schema.json', 'utf-8'));
 let schema = `
 generator client {
   provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
 }
 
 datasource db {

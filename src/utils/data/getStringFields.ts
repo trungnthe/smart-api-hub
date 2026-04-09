@@ -1,4 +1,4 @@
-import { Prisma } from "../../generated/prisma";
+import { Prisma } from "@prisma/client";
 
 export const getStringFields = (resource: string): string[] => {
   const model = Prisma.dmmf.datamodel.models.find(
