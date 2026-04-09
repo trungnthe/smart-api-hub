@@ -1,4 +1,3 @@
-import "dotenv/config";
 import express, { NextFunction, Request, Response } from 'express';
 import { prisma } from '../prisma/prisma';
 import { checkTable } from './middlewares/checkTable';
@@ -22,11 +21,9 @@ import {
 } from './utils/validation/auth.validation';
 import { rateLimiter } from './middlewares/rateLimit.middleware';
 import swaggerDocs from './utils/swagger';
+import { config } from './config';
 
-// No longer needed due to import "dotenv/config" at top
-
-
-const PORT = process.env.PORT || 3000;
+const PORT = config.PORT;
 
 const app = express();
 

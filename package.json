@@ -7,7 +7,9 @@
     "test": "vitest run",
     "dev": "ts-node src/server.ts",
     "start:prod": "node dist/src/server.js",
-    "data": "npx ts-node src/data/schemaGenenerator.ts && npx prisma migrate reset --force && npx prisma generate && npx prisma migrate dev --name init && npx prisma db seed"
+    "data": "npx ts-node src/data/schemaGenenerator.ts && npx prisma migrate reset --force && npx prisma generate && npx prisma migrate dev --name init && npx prisma db seed",
+    "docker:up": "docker-compose up -d --build",
+    "docker:down": "docker-compose down"
   },
   "keywords": [],
   "author": "",

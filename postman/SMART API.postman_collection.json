@@ -352,12 +352,12 @@
           "response": []
         },
         {
-          "name": "GET get by _page&_limit",
+          "name": "GET get by _page & _limit",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{url}}/products?_page=1&_limit=2",
+              "raw": "{{url}}/products?_fields=id,title",
               "host": [
                 "{{url}}"
               ],
@@ -366,12 +366,8 @@
               ],
               "query": [
                 {
-                  "key": "_page",
-                  "value": "1"
-                },
-                {
-                  "key": "_limit",
-                  "value": "2"
+                  "key": "_fields",
+                  "value": "id,title"
                 }
               ]
             }
@@ -619,6 +615,14 @@
           "response": []
         }
       ]
+    },
+    {
+      "name": "Check health",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
     }
   ],
   "auth": {
