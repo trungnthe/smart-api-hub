@@ -1,0 +1,17 @@
+{
+  "users": [
+    { "id": 1, "name": "Nguyen Van A", "password": "hashed_password_1", "email": "a.nguyen@example.com", "role" : 1, "updated_at": "2026-04-01T12:00:00Z" },
+    { "id": 2, "name": "Tran Thi B", "password": "hashed_password_2", "email": "b.tran@example.com", "role" : 2, "updated_at": "2026-04-02T15:30:00Z" },
+    { "id": 3, "name": "Le Van C", "password": "hashed_password_3", "email": "c.le@example.com", "role" : 1, "updated_at": "2026-04-03T10:15:00Z" }
+  ],
+  "products": [
+    { "id": 1, "title": "Laptop Dell XPS 15", "price": 2500.00, "updated_at": "2026-04-01T09:00:00Z" },
+    { "id": 2, "title": "iPhone 15 Pro", "price": 1200.00, "updated_at": "2026-04-02T11:30:00Z" },
+    { "id": 3, "title": "Bàn phím cơ Keychron K2", "price": 100.00, "updated_at": "2026-04-03T08:20:00Z" }
+  ],
+  "orders": [
+    { "id": 1, "user_id": 1, "product_id": 2, "quantity": 1, "total_price": 1200.00, "order_date": "2026-04-04T14:00:00Z" },
+    { "id": 2, "user_id": 2, "product_id": 1, "quantity": 1, "total_price": 2500.00, "order_date": "2026-04-05T16:30:00Z" },
+    { "id": 3, "user_id": 3, "product_id": 3, "quantity": 2, "total_price": 200.00, "order_date": "2026-04-06T10:00:00Z" }
+  ]
+}
