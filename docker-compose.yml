@@ -20,6 +20,7 @@ services:
   app:
     build:
       context: .
+      network: host
       dockerfile: docker/Dockerfile
     container_name: smart_api
     restart: unless-stopped
