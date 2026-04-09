@@ -13,7 +13,7 @@ export const checkTable = (
   if (!ALLOWED_RESOURCES.includes(resource)) {
     return next(
       new AppError(
-        `Bảng '${resource}' không tồn tại, vui lòng thử bảng khác !`,
+        "Bảng '${resource}' không tồn tại, vui lòng thử bảng khác !",
         404,
       ),
     );

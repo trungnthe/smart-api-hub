@@ -1,9 +1,9 @@
+import "dotenv/config";
 import { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 import { AppError } from '../utils/error/appError';
-import { config } from '../config';
 
-const SECRET_KEY = config.SECRET_KEY;
+const SECRET_KEY = process.env.SECRET_KEY || 'secret-key';
 
 export interface AuthenticatedRequest extends Request {
   user?: any;
@@ -15,11 +15,7 @@ export const verifyToken = (
   next: NextFunction,
 ) => {
   const authHeader = req.headers['authorization'];
-  let token = '';
-
-  if (authHeader && authHeader.toLowerCase().startsWith('bearer ')) {
-    token = authHeader.substring(7).trim();
-  }
+  const token = authHeader && authHeader.split(' ')[1];
 
   if (!token) {
     return next(
@@ -29,7 +25,6 @@ export const verifyToken = (
 
   jwt.verify(token, SECRET_KEY, (err, decoded) => {
     if (err) {
-      console.log(`[Auth] Verification failed: ${err.message}`);
       const message =
         err.name === 'TokenExpiredError'
           ? 'Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại'

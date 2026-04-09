@@ -3,9 +3,8 @@ import bcrypt from 'bcrypt';
 import { prisma } from '../../prisma/prisma';
 import jwt from 'jsonwebtoken';
 import { AppError } from '../utils/error/appError';
-import { config } from '../config';
 
-const SECRET_KEY = config.SECRET_KEY;
+const SECRET_KEY = process.env.JWT_SECRET || process.env.SECRET_KEY || 'your_super_secret_key_123';
 
 /**
  * @openapi
