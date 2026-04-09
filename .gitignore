@@ -6,4 +6,5 @@ dist
 
 # Prisma
 /src/generated/prisma
+/generated
 /prisma/migrations
