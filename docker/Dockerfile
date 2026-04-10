@@ -8,7 +8,6 @@ RUN npm ci
 
 COPY . .
 # Tạo schema, generate client và build source code
-RUN npx ts-node src/data/schemaGenenerator.ts
 RUN npx prisma generate
 RUN npm run build
 

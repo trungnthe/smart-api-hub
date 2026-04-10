@@ -3,7 +3,7 @@ import * as path from 'path';
 import { prisma } from './prisma';
 
 async function main() {
-  const filePath = path.join(__dirname, '../schema.json');
+  const filePath = path.join(process.cwd(), 'schema.json');
   const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
   console.log('--- 🗑️  Đang dọn dẹp và Reset bộ đếm ---');

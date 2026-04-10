@@ -7,13 +7,14 @@
     "test": "vitest run",
     "dev": "ts-node src/server.ts",
     "start:prod": "node dist/src/server.js",
-    "data": "npx ts-node src/data/schemaGenenerator.ts && npx prisma migrate reset --force && npx prisma generate && npx prisma migrate dev --name init && npx prisma db seed",
+    "db:init": "npx prisma migrate dev --name init && npx prisma db seed",
+    "db:reset": "npx prisma migrate reset --force && npx prisma generate && npx prisma db seed",
     "docker:up": "docker-compose up -d --build",
     "docker:down": "docker-compose down"
   },
   "prisma": {
-  "seed": "node dist/prisma/seed.js"
-},
+    "seed": "node dist/prisma/seed.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
