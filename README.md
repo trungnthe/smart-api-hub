@@ -1,6 +1,6 @@
 # 🚀 Smart API Hub
 
-Smart API Hub là một hệ thống REST API Platform mạnh mẽ, có khả năng tự động sinh các endpoint CRUD từ file cấu hình `schema.json`. Hệ thống được xây dựng với Node.js, TypeScript và Prisma.
+Smart API Hub là một hệ thống REST API Platform linh hoạt, có khả năng cung cấp các endpoint CRUD động. Cấu trúc database được quản lý trực tiếp bằng Prisma, kết hợp với khả năng tự động seed dữ liệu từ file `schema.json`. Hệ thống được xây dựng với Node.js, TypeScript và Prisma.
 
 ## 🏗 Kiến trúc hệ thống (Architecture)
 
@@ -66,7 +66,7 @@ Hệ thống sẽ khả dụng tại: `http://localhost:3000`
 
 ### 4. Chạy ứng dụng Local (Phát triển)
 
-Nếu bạn đã có database và muốn chạy debug:
+Nếu bạn đã cài PostgreSQL và muốn chạy local:
 
 1. Cài đặt dependency:
 
@@ -74,11 +74,15 @@ Nếu bạn đã có database và muốn chạy debug:
 npm install
 ```
 
-2. Khởi tạo dữ liệu từ `schema.json`:
+2. Khởi tạo CSDL và nạp dữ liệu từ `schema.json`:
+
+(Bạn có thể thiết kế cấu trúc DB trong `prisma/schema.prisma` trước).
 
 ```bash
-npm run data
+npm run db:init
 ```
+
+*(Lưu ý: Dùng `npm run db:reset` nếu bạn muốn làm mới lại toàn bộ database khi có cập nhật cấu trúc lớn).*
 
 3. Chạy chế độ development:
 
